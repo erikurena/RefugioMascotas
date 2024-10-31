@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RefugioMascotas", "RefugioMascotas\RefugioMascotas.csproj", "{615CBABB-A084-4E13-A7AB-230900CE35F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefugioMascotasTests", "RefugioMascotasTests\RefugioMascotasTests.csproj", "{FBC6C09C-2F4D-44BF-9D08-CC3C98011D07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{615CBABB-A084-4E13-A7AB-230900CE35F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{615CBABB-A084-4E13-A7AB-230900CE35F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{615CBABB-A084-4E13-A7AB-230900CE35F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{615CBABB-A084-4E13-A7AB-230900CE35F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC6C09C-2F4D-44BF-9D08-CC3C98011D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC6C09C-2F4D-44BF-9D08-CC3C98011D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC6C09C-2F4D-44BF-9D08-CC3C98011D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC6C09C-2F4D-44BF-9D08-CC3C98011D07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0525FB92-B952-4149-8292-EA7CF5613DF0}
+	EndGlobalSection
+EndGlobal

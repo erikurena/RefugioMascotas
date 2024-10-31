@@ -1,0 +1,67 @@
+﻿@model RefugioMascotas.Models.Mascota
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Actualizar Mascota</h1>
+<hr />
+
+<div class="card shadow-sm">
+    <div class="card-header">
+        <h4>Mascota</h4>
+    </div>
+    <div class="card-body  d-flex flex-column">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <input type="hidden" asp-for="IdMascota" />
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                    <label asp-for="TipoMascotaNavigation.Especie" class="control-label"></label>
+                    <input asp-for="TipoMascotaNavigation.Especie" class="form-control" />
+                    <span asp-validation-for="TipoMascotaNavigation.Especie" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                    <label asp-for="TipoMascotaNavigation.Raza" class="control-label"></label>
+                    <input asp-for="TipoMascotaNavigation.Raza" class="form-control" />
+                    <span asp-validation-for="TipoMascotaNavigation.Raza" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                    <label asp-for="SexoMascota" class="control-label"></label>
+                    <select asp-for="SexoMascota" class="form-control form-select" asp-items="ViewBag.listaSexo"></select>
+                    <span asp-validation-for="SexoMascota" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                    <label asp-for="Edad" class="control-label"></label>
+                    <input asp-for="Edad" class="form-control" />
+                    <span asp-validation-for="Edad" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                    <label asp-for="IdEstadoAdopcion" class="control-label"></label>
+                    <select asp-for="IdEstadoAdopcion" class="form-control form-select" asp-items="ViewBag.listaEstadoAdpciones"></select>
+                    <span asp-validation-for="IdEstadoAdopcion" class="text-danger"></span>
+                </div>
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
+                    <label asp-for="FotoFileMascota" class="control-label"></label>
+                    <input asp-for="FotoFileMascota" class="form-control" accept="image/*" />
+                    <span asp-validation-for="FotoFileMascota" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn btn-primary mt-2 mb-2" />
+                </div>
+            </div>
+        </form>
+        <div>
+            <a asp-action="Index" class="btn btn-secondary">Volver  a la lista</a>
+        </div>
+    </div>
+</div>
+
+
+

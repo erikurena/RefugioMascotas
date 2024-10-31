@@ -1,0 +1,60 @@
+﻿@model IEnumerable<RefugioMascotas.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>EMPLEADOS</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table shadow-sm">
+    <thead class="card-header">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SexoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="card-body">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SexoNavigation.TipoSexo)
+            </td>
+            <td>
+                    <a asp-action="Details" asp-route-id="@item.IdEmpleado"><i class="fa-solid fa-circle-info"></i></a> |
+                    <a asp-action="Edit" asp-route-id="@item.IdEmpleado" class="btnGris"><i class="fa-solid fa-pen-to-square btnGris"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdEmpleado" class="btnRojo"><i class="fa-solid fa-trash btnRojo"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

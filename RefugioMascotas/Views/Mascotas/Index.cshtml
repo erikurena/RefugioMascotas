@@ -1,0 +1,87 @@
+﻿@model IEnumerable<RefugioMascotas.Models.Mascota>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Mascotas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success shadow-sm">Crear Nuevo</a>
+</p>
+
+<table class="table shadow-sm ">
+    <thead class="card-header  ">
+        <tr class="">
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoMascotaNavigation!.Especie)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TipoMascotaNavigation!.Raza)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SexoNavigation!.TipoSexo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Edad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaIngreso)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EstadoAdopcionNavigation!.EstadodeAdopcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FotoMascota)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="card-body">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoMascotaNavigation!.Especie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoMascotaNavigation!.Raza)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SexoNavigation!.TipoSexo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Edad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaIngreso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EstadoAdopcionNavigation!.EstadodeAdopcion)
+                    </td>
+                    <td>
+                        @{
+                            if (item.FotoMascota != null)
+                            {
+                                <img src="~/fotoMascotas/@item.FotoMascota" width="30px" />
+                            }
+                        }
+                    </td>
+                    <td>
+                    <a asp-action="Details" asp-route-id="@item.IdMascota"><i class="fa-solid fa-circle-info"></i></a> |
+                    <a asp-action="Edit" asp-route-id="@item.IdMascota"> <i class="fa-solid fa-pen-to-square btnGris"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdMascota"><i class="fa-solid fa-trash btnRojo"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
